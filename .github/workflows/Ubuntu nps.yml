@@ -24,7 +24,9 @@ jobs:
       env:
         SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
       run: |
-        echo runner:sw456 |sudo chpasswd runner
+        echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
+        sleep 1
+        ./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp
       
     - name: Run End Script
       run: source ubuntu-end.sh
