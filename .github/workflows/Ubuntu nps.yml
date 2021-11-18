@@ -22,7 +22,7 @@ jobs:
 
     - name: Start Npc
       env:
-        SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        SSH_PASS: ${{ secrets.SSH_PASS }}
       run: |
         echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
         sleep 1
