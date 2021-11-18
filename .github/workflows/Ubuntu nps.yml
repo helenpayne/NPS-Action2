@@ -20,7 +20,8 @@ jobs:
       #run: source ubuntu-start.sh
       
     - name: Run Npc
-      with:
+    - shell: bash
+    env:
        SSH_PASS: ${{ secrets.SSH_PASS }}
        run: |
          echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
