@@ -13,17 +13,18 @@ runs:
     - name: Change the SSH user password
       run: |
           echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
-          echo "${{ inputs.SSH_PASS }}"
-    #- name: Install and setup NPC
-      #run: |
-        #echo "# Install NPC"
-          #curl https://bin.equinox.io/c/4VmDzA7iaHb/$(cat ngrok_zip_name) --output ngrok.zip
-      #shell: bash
+          
+    - name: Install and setup NPC
+      run: |
+        echo "# Install NPC"
+        wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz
+        tar -zxvf linux_amd64_client.tar.gz
+        rm linux_amd64_client.tar.gz
+        sleep 1
+        chmod +x npc
 
-    #- name: Start NPC
-      #run: |
-        #printf "# Starting NPC..."
-          #./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp &
-
-    
-      shell: bash
+    - name: Start NPC
+      run: |
+        printf "# Starting NPC..."
+          ./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp &
+          
