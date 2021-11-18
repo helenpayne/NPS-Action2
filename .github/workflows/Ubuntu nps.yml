@@ -20,9 +20,8 @@ jobs:
       #run: source ubuntu-start.sh
       
     - name: Run NPC
-      env:
-       SSH_PASS: ${{ secrets.SSH_PASS }}
-      
+
+
 
     #- name: Run End Script
       #run: source ubuntu-end.sh
