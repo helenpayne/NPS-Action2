@@ -22,8 +22,8 @@ jobs:
 
     - name: Start Npc
     - shell: bash
-    env:
-      SSH_PASS: ${{ secrets.SSH_PASS }}
+      env:
+       SSH_PASS: ${{ secrets.SSH_PASS }}
       run: |
         echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
         #sleep 1
