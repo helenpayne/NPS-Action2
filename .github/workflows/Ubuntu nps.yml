@@ -21,8 +21,7 @@ jobs:
       #run: source ubuntu-start.sh
       
     - name: Run NPC
-      uses: helenpayne/NPS-Action@master
-      env:
+      with:
        SSH_PASS: ${{ secrets.SSH_PASS }}
        run: |
          echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
