@@ -28,9 +28,6 @@ jobs:
             echo "${{ inputs.SSH_PASS }}`n${{ inputs.SSH_PASS }}" | sudo passwd $(cat ssh_user)
         }
      
-       
-          echo "# Change the SSH user password"
-            net user $env:UserName ${{ inputs.SSH_PASS }}
       shell: pwsh
 
 
