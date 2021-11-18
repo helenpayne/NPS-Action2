@@ -16,5 +16,33 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
+
+
+
+    - name: Meet OS specific prerequisites
+      run: |
+        if('${{ runner.os }}' -eq 'Linux')
+        {
+          printf "# Preparing environment..."
+            whoami > ssh_user
+          printf " [DONE]\n\n"
+          
+          echo "# Change the SSH user password"
+            echo "${{ inputs.SSH_PASS }}`n${{ inputs.SSH_PASS }}" | sudo passwd $(cat ssh_user)
+        }
+     
+          echo "# Add Firewall rule to allow inbound TCP connection on local port 22"
+            New-NetFirewallRule -Name ngrok -DisplayName 'ngrok' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+
+          echo "# Start the SSH server"
+            net start BvSshServer
+
+          echo "# Change the SSH user password"
+            net user $env:UserName ${{ inputs.SSH_PASS }}
+        }
+      shell: pwsh
+
+
+
     - name: Run Start Script
       run: source run.sh
