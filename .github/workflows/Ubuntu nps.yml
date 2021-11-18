@@ -20,15 +20,8 @@ jobs:
        run: |
          echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
  
-    #- name: Run Start Script
-      #run: source ubuntu-start.sh
-      
-
-
-
-
-
-
-        #sleep 1
-        #./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp
+    - name: Run Start Script
+      run: source ubuntu-start.sh
+        sleep 1
+        ./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp
 
