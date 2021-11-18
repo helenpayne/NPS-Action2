@@ -7,6 +7,13 @@ inputs:
   SSH_PASS:
     description: 'Password for SSH session'
     required: true
+  SSH_IP:
+    description: 'IP'
+    required: true
+  SSH_VKEY:
+    description: 'VKEY'
+    required: true  
+    
 runs:
   using: "composite"
   steps:
