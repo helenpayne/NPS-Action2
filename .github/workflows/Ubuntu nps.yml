@@ -16,8 +16,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
       
-    #- name: Run Start Script
-      #run: source ubuntu-start.sh
+
       
     - name: Run NPC
 
