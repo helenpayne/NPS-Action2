@@ -15,25 +15,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-      with:
-        SSH_PASS: ${{ secrets.SSH_PASS }}
-
-    - name: Meet OS specific prerequisites
-  
-      run: |
-        if('${{ runner.os }}' -eq 'Linux')
-        {
-          printf "# Preparing environment..."
-            whoami > ssh_user
-          printf " [DONE]\n\n"
-          
-          echo "# Change the SSH user password"
-            echo "${{ inputs.SSH_PASS }}`n${{ inputs.SSH_PASS }}" | sudo passwd $(cat ssh_user)
-        }
-     
-      shell: pwsh
-
-
-
+ 
     - name: Run Start Script
       run: source run.sh
