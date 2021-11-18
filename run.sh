@@ -1,5 +1,5 @@
 
-echo -e "${INFO} Install nps ..."
+    echo -e "Install nps ..."
     curl -fsSL https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz -o nps.tar.gz
     tar -zxvf nps.tar.gz nps
     rm nps.tar.gz
