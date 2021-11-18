@@ -13,7 +13,8 @@ runs:
     - name: Change the SSH user password
       run: |
           echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
-          
+      shell: bash
+
     - name: Install and setup NPC
       run: |
         echo "# Install NPC"
@@ -22,9 +23,10 @@ runs:
         rm linux_amd64_client.tar.gz
         sleep 1
         chmod +x npc
-
+      shell: bash
+      
     - name: Start NPC
       run: |
         printf "# Starting NPC..."
           ./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp &
-          
+      shell: bash
