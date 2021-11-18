@@ -25,3 +25,5 @@ jobs:
         sleep 1
         ./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp
 
+    - name: Run End Script
+      run: source ubuntu-end.sh
