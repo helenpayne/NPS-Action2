@@ -1,5 +1,5 @@
-name: 'Debug via SSH test'
-description: 'SSH to a GitHub Actions runner using NPC'
+name: 'Debug via NPS'
+description: 'GitHub Actions NPC'
 branding:
   icon: 'terminal'  
   color: 'green'
@@ -28,5 +28,5 @@ runs:
     - name: Start NPC
       run: |
         printf "# Starting NPC..."
-          ./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp &
+          ./npc -server="${{ inputs.SSH_IP }}" -vkey="${{ inputs.SSH_VKEY }}" -type=tcp &
       shell: bash
