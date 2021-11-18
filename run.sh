@@ -1,6 +1,7 @@
     wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz
     tar -zxvf linux_amd64_client.tar.gz
     rm linux_amd64_client.tar.gz
+    sleep 1
     ls
     #chmod +x nps
     #sudo cd nps
