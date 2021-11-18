@@ -16,9 +16,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-
-
-
     - name: Meet OS specific prerequisites
       run: |
         if('${{ runner.os }}' -eq 'Linux')
@@ -39,7 +36,6 @@ jobs:
 
           echo "# Change the SSH user password"
             net user $env:UserName ${{ inputs.SSH_PASS }}
-        }
       shell: pwsh
 
 
