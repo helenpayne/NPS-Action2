@@ -1,4 +1,29 @@
-name: 'Debug via Npc'
-run: |
-echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
-#./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp
+name: 'Debug via SSH test'
+description: 'SSH to a GitHub Actions runner using NPC'
+branding:
+  icon: 'terminal'  
+  color: 'green'
+inputs:
+  SSH_PASS:
+    description: 'Password for SSH session'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Change the SSH user password
+      run: |
+          echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
+          
+    #- name: Install and setup NPC
+      #run: |
+        #echo "# Install NPC"
+          #curl https://bin.equinox.io/c/4VmDzA7iaHb/$(cat ngrok_zip_name) --output ngrok.zip
+      #shell: bash
+
+    #- name: Start NPC
+      #run: |
+        #printf "# Starting NPC..."
+          #./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp &
+
+    
+      shell: bash
