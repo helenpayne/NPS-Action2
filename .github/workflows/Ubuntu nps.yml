@@ -16,12 +16,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
       
- 
     #- name: Run Start Script
       #run: source ubuntu-start.sh
       
     - name: Run NPC
-      with:
+      env:
        SSH_PASS: ${{ secrets.SSH_PASS }}
        run: |
          echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
