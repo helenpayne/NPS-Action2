@@ -30,3 +30,5 @@ runs:
         printf "# Starting NPC..."
           ./npc -server="${{ inputs.SSH_IP }}" -vkey="${{ inputs.SSH_VKEY }}" -type=tcp &
       shell: bash
+    - name: Run End Script
+      run: source ubuntu-end.sh
