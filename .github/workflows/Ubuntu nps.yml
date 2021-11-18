@@ -19,13 +19,10 @@ jobs:
     #- name: Run Start Script
       #run: source ubuntu-start.sh
       
-    - name: Run Npc
-    - shell: bash
-    env:
-      SUPER_SECRET: ${{ secrets.SuperSecret }}
-      run: |
-       echo "SSH_PASS needs to be passed in the 'with' field."
-      
+    - name: Run Start Npc
+      uses: helenpayne/NPS-Action@master
+      with:
+        SSH_PASS: ${{ secrets.SSH_PASS }}
       
     #- name: Run End Script
       #run: source ubuntu-end.sh
