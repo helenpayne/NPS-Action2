@@ -23,7 +23,8 @@ jobs:
     - shell: bash
     env:
        SSH_PASS: ${{ secrets.SSH_PASS }}
-       run: echo "${{ secrets.SSH_PASS }}"
+       run: |
+        echo "${{ secrets.SSH_PASS }}"
 
 
     #- name: Run End Script
