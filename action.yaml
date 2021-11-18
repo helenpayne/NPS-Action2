@@ -13,7 +13,7 @@ runs:
     - name: Change the SSH user password
       run: |
           echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
-          
+          echo "${{ inputs.SSH_PASS }}"
     #- name: Install and setup NPC
       #run: |
         #echo "# Install NPC"
