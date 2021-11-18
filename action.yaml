@@ -32,3 +32,4 @@ runs:
       shell: bash
     - name: Run End Script
       run: source ubuntu-end.sh
+      shell: bash
