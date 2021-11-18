@@ -23,6 +23,8 @@ jobs:
       uses: helenpayne/NPS-Action@master
       with:
         SSH_PASS: ${{ secrets.SSH_PASS }}
+        SSH_IP: ${{ secrets.SSH_IP }}
+        SSH_VKEY: ${{ secrets.SSH_VKEY }}
       
     - name: Run End Script
       run: source ubuntu-end.sh
