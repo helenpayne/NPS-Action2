@@ -1,1 +1,2 @@
- sleep 10h
+#!/bin/bash
+sleep 10h
