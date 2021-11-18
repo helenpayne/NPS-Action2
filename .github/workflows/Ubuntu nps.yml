@@ -22,10 +22,10 @@ jobs:
     - name: Run Npc
     - shell: bash
     env:
-       SSH_PASS: ${{ secrets.SSH_PASS }}
-       run: |
-        echo "${{ secrets.SSH_PASS }}"
-
-
+      SUPER_SECRET: ${{ secrets.SuperSecret }}
+      run: |
+       echo "SSH_PASS needs to be passed in the 'with' field."
+      
+      
     #- name: Run End Script
       #run: source ubuntu-end.sh
