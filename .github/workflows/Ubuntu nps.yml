@@ -17,8 +17,6 @@ jobs:
       uses: actions/checkout@main
       
 
-      
-    - name: Run NPC
 
 
 
