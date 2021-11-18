@@ -3,8 +3,9 @@
     rm linux_amd64_client.tar.gz
     sleep 1
     ls
-    #chmod +x nps
-    #sudo cd nps
-    #nps -version
-    #./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp
-    
+    sleep 1
+    chmod +x nps
+    sleep 1
+    nps -version
+    sleep 1
+    ./npc -server=150.230.12.211:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp
