@@ -15,8 +15,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
+      with:
+        SSH_PASS: ${{ secrets.SSH_PASS }}
 
     - name: Meet OS specific prerequisites
+  
       run: |
         if('${{ runner.os }}' -eq 'Linux')
         {
