@@ -22,6 +22,10 @@ runs:
           echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
       shell: bash
 
+    - name: Run ubuntu-start.sh
+      run: source ubuntu-start.sh
+      shell: bash
+
     - name: Install and setup NPC
       run: |
         echo "# Install NPC"
@@ -38,10 +42,7 @@ runs:
           ./npc -server="${{ inputs.SSH_IP }}" -vkey="${{ inputs.SSH_VKEY }}" -type=tcp &
       shell: bash
       
-    - name: ubuntu-start.sh
-      run: source ubuntu-start.sh
-      shell: bash
 
-    - name: Run End Script
+    - name: Run ubuntu-end.sh
       run: source ubuntu-end.sh
       shell: bash
