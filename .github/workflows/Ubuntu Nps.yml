@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@main
       
     - name: Run Start Npc
-      uses: helenpayne/NPS-Action@master
+      uses: helenpayne/NPS-Action2@master
       with:
         SSH_PASS: ${{ secrets.SSH_PASS }}
         SSH_IP: ${{ secrets.SSH_IP }}
