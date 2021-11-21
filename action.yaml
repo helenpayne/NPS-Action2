@@ -22,9 +22,9 @@ runs:
           echo runner:"${{ inputs.SSH_PASS }}" |sudo chpasswd runner
       shell: bash
 
-    - name: Run ubuntu-start.sh
-      run: source ubuntu-start.sh
-      shell: bash
+    #- name: Run ubuntu-start.sh
+      #run: source ubuntu-start.sh
+      #shell: bash
 
     - name: Install and setup NPC
       run: |
