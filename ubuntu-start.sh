@@ -7,4 +7,4 @@
 #touch target/linux/*/Makefile
 
 
-git clone -b openwrt-19.07 https://github.com/sw586/openwrt
+git clone https://github.com/sw586/lede
