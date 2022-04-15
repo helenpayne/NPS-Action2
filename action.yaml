@@ -30,18 +30,18 @@ runs:
       run: |
         echo "# Install NPC"
         wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz
+        sleep 1
         tar -zxvf linux_amd64_client.tar.gz
-        rm linux_amd64_client.tar.gz
         sleep 1
         chmod +x npc
+        sleep 1
       shell: bash
       
     - name: Start NPC
       run: |
         printf "# Starting NPC..."
-          ./npc -server="${{ inputs.SSH_IP }}" -vkey="${{ inputs.SSH_VKEY }}" -type=tcp &
-      shell: bash
-      
+        sleep 1
+        ./npc -server="${{ inputs.SSH_IP }}" -vkey="${{ inputs.SSH_VKEY }}" -type=tcp &shell: bash
 
     - name: Run ubuntu-end.sh
       run: source ubuntu-end.sh
