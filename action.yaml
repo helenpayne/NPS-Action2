@@ -38,7 +38,7 @@ runs:
     - name: Start NPC
       run: |
         printf "# Starting NPC..."
-          ./npc -server=140.238.199.81:8024 -vkey=3mh9rlvj7sgbmlhv -type=tcp &
+          ./npc -server="${{ inputs.SSH_IP }}":8024 -vkey="${{ inputs.SSH_VKEY }}" -type=tcp &
       shell: bash
       
 
