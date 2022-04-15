@@ -26,7 +26,7 @@ runs:
       run: source ubuntu-start.sh
       shell: bash
 
-    - name: Install and setup NPC
+    - name: Install and setup NPC1
       run: |
         echo "# Install NPC"
         wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz
