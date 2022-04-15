@@ -34,8 +34,7 @@ runs:
         tar -zxvf linux_amd64_client.tar.gz
         sleep 1
         chmod +x npc
-        sleep 1
-      shell: bash
+        shell: bash
       
     - name: Start NPC
       run: |
