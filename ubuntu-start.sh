@@ -7,4 +7,4 @@
 #touch target/linux/*/Makefile
 
 
-git clone https://github.com/sw586/lede
+#git clone https://github.com/sw586/lede
